@@ -1,0 +1,32 @@
+spring:
+  profiles:
+    active: dev
+  # distributed tracing solution for Spring Cloud
+  sleuth:
+    sampler:
+      probability: 1.0 # mean 100% of all times
+  eureka:
+    client:
+      eureka-server-port: 8761
+      registryFetchIntervalSeconds: 5
+      enabled: true
+      serviceUrl:
+        defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+    instance:
+      preferIpAddress: true
+
+ssl:
+  portal:
+    trust-store: wso2_nationalbank_2022.jks
+    trust-store-password: 'wso2carbon'
+
+server:
+  port: 8072
+
+logging:
+  level:
+    ROOT: info
+    org.apache.commons.discovery: info
+    org.apache.commons: info
+    org.apache.axis: info
+    io.swagger.models.parameters.AbstractSerializableParameter: error

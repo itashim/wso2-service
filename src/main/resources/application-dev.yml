@@ -1,0 +1,19 @@
+spring:
+  profiles: dev
+
+server:
+  wso2:
+    url: http://
+    username: test
+    password: test
+    profile-name: default
+
+is:
+  switch:
+    axis.log.handler: false
+
+ssl:
+  wso2:
+    trust-store: logs/idp.bsbnb.rk.jks
+    trust-store-password: 'changeit'
+

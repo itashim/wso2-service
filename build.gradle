@@ -1,0 +1,43 @@
+plugins {
+    id 'java'
+}
+
+group = 'kz.bsbnb.portal'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+    runtime.exclude group: "org.slf4j", module: "slf4j-log4j12"
+    compile.exclude group: "org.slf4j", module: "slf4j-log4j12"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //implementation gradleApi()
+
+    //implementation group: 'io.springfox', name: 'springfox-spring-web', version: '2.9.2'
+    //implementation group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+    //implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
+
+    //implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'commons-lang:commons-lang:2.6'
+    //testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+
+    implementation group: 'org.apache.axis', name: 'axis', version: '1.4'
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
+    implementation group: 'commons-discovery', name: 'commons-discovery', version: '0.5'
+    implementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5'
+    implementation group: 'javax.xml', name: 'jaxrpc-api', version: '1.1'
+    implementation group: 'wsdl4j', name: 'wsdl4j', version: '1.6.3'
+
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
